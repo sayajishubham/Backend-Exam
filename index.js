@@ -3,11 +3,12 @@ const connection = require("./config/db")
 const UserRouter = require("./Routes/user.route")
 const PostRouter = require("./Routes/post.route")
 const cookieParser = require('cookie-parser');
+const middlewares = require("./middleware/middleware");
 
 require("dotenv").config()
 
 const app = express()
-
+app.use(middlewares.rate)
 app.use(express.json())
 app.use(cookieParser())
 app.use("/user", UserRouter)

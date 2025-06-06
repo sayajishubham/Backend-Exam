@@ -21,7 +21,9 @@ const userController = {
                 return res.status(400).json({ message: "Invalid credentials" });
             }
 
-            const htmltemplate = await ejs.renderFile(__dirname + "/../views/conformation.ejs");
+            const htmltemplate = await ejs.renderFile(__dirname + "/../views/conformation.ejs", {
+                name: user.name
+            });
 
 
             const token = jwt.sign(

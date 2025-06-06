@@ -1,71 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Confirmation Email</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        padding: 20px;
-      }
-      .email-container {
-        max-width: 600px;
-        margin: auto;
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .header {
-        text-align: center;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-      }
-      .content {
-        padding-top: 20px;
-      }
-      .footer {
-        margin-top: 30px;
-        font-size: 14px;
-        color: #777;
-        text-align: center;
-      }
-    </style>
   </head>
-  <body>
-    <div class="email-container">
-      <div class="header">
-        <h2>Confirmation Email</h2>
-      </div>
-      <div class="content">
-        <p>Dear <strong>[Recipient's Name]</strong>,</p>
-
-        <p>
-          Thank you for your <strong>[registration/order/scheduling]</strong>.
-          This is a confirmation for your
-          <strong>[meeting/order/event]</strong>.
-        </p>
-
-        <p>
-          <strong>Date & Time:</strong> [Insert date/time] <br />
-          <strong>Location/Platform:</strong> [Insert location or online link]
-          <br />
-          <strong>Reference No:</strong> [Insert reference number if applicable]
-        </p>
-
-        <p>
-          If you have any questions, feel free to contact us at
-          <a href="mailto:support@example.com">support@example.com</a>.
-        </p>
-
-        <p>We look forward to connecting with you!</p>
-
-        <p>
-          Best regards,<br /><strong>[Your Name]</strong><br />[Your Company]
-        </p>
-      </div>
-      <div class="footer">&copy; 2025 [Your Company]. All rights reserved.</div>
-    </div>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding: 40px 0">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              background-color: #ffffff;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <tr>
+              <td
+                style="
+                  background-color: #4caf50;
+                  padding: 20px;
+                  text-align: center;
+                  color: white;
+                "
+              >
+                <h1>Confirmation Email</h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 30px">
+                <p style="font-size: 16px">Hello <%=name%>,</p>
+                <p style="font-size: 16px; line-height: 1.5">
+                  Thank you for signing up. Please confirm your email address by
+                  clicking the button below.
+                </p>
+                <p style="text-align: center; margin: 30px 0">
+                  <a
+                    href="{{ confirmationLink }}"
+                    style="
+                      background-color: #4caf50;
+                      color: white;
+                      padding: 12px 25px;
+                      text-decoration: none;
+                      border-radius: 4px;
+                      font-size: 16px;
+                    "
+                    >Confirm Email</a
+                  >
+                </p>
+                <p style="font-size: 14px; color: #888">
+                  If you did not create an account, no further action is
+                  required.
+                </p>
+                <p style="font-size: 16px; margin-top: 40px">
+                  Best regards,<br />The Team
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background-color: #f1f1f1;
+                  padding: 20px;
+                  text-align: center;
+                  font-size: 12px;
+                  color: #777;
+                "
+              >
+                © 2025 Your Company. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

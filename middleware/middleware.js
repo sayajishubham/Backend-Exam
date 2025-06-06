@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const userModel = require("../model/user.model");
+const rateLimit = require('express-rate-limit')
 
 const middlewares = {
     checkAuth: async (req, res, next) => {
@@ -21,7 +22,13 @@ const middlewares = {
             console.error(error);
             res.status(401).json({ message: "Unauthorized: Invalid token" });
         }
-    }
+    },
+    rate: rateLimit({
+        windowMs: 600000,
+        limit: 70,
+        standardHeaders: 'draft-8',
+        legacyHeaders: false,
+    })
 };
 
 module.exports = middlewares;
