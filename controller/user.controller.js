@@ -1,3 +1,8 @@
+const userModel = require("../model/user.model");
+const Mail = require("../utils/mail");
+const ejs = require("ejs")
+const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt");
 const userController = {
     Signin: async (req, res) => {
         const { email, password } = req.body;
