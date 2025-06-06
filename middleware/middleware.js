@@ -1,7 +1,9 @@
 const middlewares = {
     checkAuth: async (req, res, next) => {
         try {
+            console.log(req.cookies)
             const token = req.cookies.veri;
+            console.log(token)
             if (!token) {
                 return res.status(401).json({ message: "Unauthorized: No token provided" });
             }

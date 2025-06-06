@@ -25,7 +25,7 @@ const userController = {
 
 
             const token = jwt.sign(
-                { userId: user._id, email: user.email },
+                { userId: user._id, email: user.email, name: user.name },
                 process.env.SECRET_PASS,
                 { expiresIn: "7m" }
             );
